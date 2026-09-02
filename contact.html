@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#06162E',
+                            blue: '#007BFF',
+                            slate: '#64748B',
+                            light: '#F8FAFC',
+                            border: '#E2E8F0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px -12px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(0, 123, 255, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #1E293B; }
+        .mesh-gradient {
+            background-color: #F8FAFC;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(0, 123, 255, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(6, 22, 46, 0.03) 0px, transparent 50%);
+        }
+        .btn-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .input-field { transition: all 0.2s ease; }
+        .input-field:focus { border-color: #007BFF; box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1); }
+    </style>
+</head>
+<body class="mesh-gradient overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-white/70 backdrop-blur-xl border-b border-brand-border">
+        <div class="flex items-center space-x-10">
+            <a href="home.html" class="flex items-center space-x-6">
+                <div class="bg-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
+                    <img src="img/logo.png" class="h-6 w-6" alt="Logo" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-brand-navy font-bold text-l leading-none">Info Data</span>
+                </div>
+            </a>
+        </div>
+        <div class="flex items-center space-x-6">
+            <a href="https://id.infodata.my" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Customer Login</a>
+            <a href="contact.html" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Contact Us</a>
+            <a href="demo.html">
+            <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow">
+                Book a Demo
+            </button></a>
+        </div>
+    </nav>
+
+    <!-- Hero / Page Header -->
+    <header id="page-header" class="relative pt-44 pb-20 px-6 lg:px-12 overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-[0.04] pointer-events-none">
+            <div class="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] border border-brand-navy rounded-full"></div>
+            <div class="absolute top-[10%] right-[-5%] w-[700px] h-[700px] border border-brand-navy rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-brand-blue/10 border border-brand-blue/10 px-4 py-1.5 rounded-full mb-8">
+                <span class="w-2 h-2 bg-brand-blue rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-bold text-brand-blue uppercase tracking-widest">We'd love to hear from you</span>
+            </div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-brand-navy leading-[1.1] mb-6">
+                Get in <span class="text-brand-blue">Touch</span>
+            </h1>
+            <p class="text-lg text-brand-slate max-w-2xl mx-auto leading-relaxed">
+                Have a question about our verification protocols or need assistance? Reach out to our team using the details below or send us a message directly.
+            </p>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <section id="contact-content" class="pb-24 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-5 gap-10">
+
+                <!-- Left: Contact Details -->
+                <div id="contact-details" class="lg:col-span-2 space-y-6">
+                    <div class="bg-brand-navy rounded-[2rem] p-10 shadow-premium relative overflow-hidden h-full">
+                        <div class="absolute -top-16 -right-16 w-64 h-64 bg-brand-blue/10 rounded-full pointer-events-none"></div>
+                        <h3 class="text-2xl font-extrabold text-white mb-2 relative z-10">Contact Information</h3>
+                        <p class="text-white/50 text-sm mb-10 relative z-10">Our team is available to answer your inquiries during business hours.</p>
+
+                        <div class="space-y-8 relative z-10">
+                            <div class="flex items-start space-x-5">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot text-brand-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-2">Company Address</h4>
+                                    <p class="text-white/60 text-sm leading-relaxed">
+                                        B-2-1 Plaza Damas<br>
+                                        60 Jalan Sri Hartamas 1, Sri Hartamas<br>
+                                        50480 Kuala Lumpur, Malaysia
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-5">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-envelope text-brand-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-2">Email Us</h4>
+                                    <a href="mailto:support@infodata.my" class="text-white/60 text-sm hover:text-brand-blue transition-colors block mb-1">support@infodata.my</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-5">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-clock text-brand-blue"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold mb-2">Business Hours</h4>
+                                    <p class="text-white/60 text-sm leading-relaxed">Monday – Friday<br>9:00 AM – 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Right: Inquiry Form -->
+                <div id="inquiry-form-wrapper" class="lg:col-span-3">
+                    <div class="bg-white rounded-[2rem] p-10 lg:p-12 shadow-premium border border-brand-border h-full">
+                        <h3 class="text-2xl font-extrabold text-brand-navy mb-2">Send a General Inquiry</h3>
+                        <p class="text-brand-slate text-sm mb-8">Fill out the form below and our team will get back to you within 1-2 business days.</p>
+
+                        <form id="inquiry-form" class="space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Full Name</label>
+                                    <input type="text" placeholder="John Doe" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Email Address</label>
+                                    <input type="email" placeholder="john@company.com" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Company Name</label>
+                                <input type="text" placeholder="Your Company Pte Ltd" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Subject</label>
+                                <select class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                    <option>General Question</option>
+                                    <option>Product Inquiry</option>
+                                    <option>Partnership Opportunity</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Message</label>
+                                <textarea rows="5" placeholder="Tell us how we can help..." class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm resize-none"></textarea>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <input type="checkbox" id="consent" class="w-4 h-4 rounded border-brand-border text-brand-blue focus:ring-brand-blue">
+                                <label for="consent" class="text-xs text-brand-slate">I agree to the <a href="#" class="text-brand-blue font-bold hover:underline">Privacy Policy</a> and consent to being contacted.</label>
+                            </div>
+
+                            <button type="submit" class="btn-hover w-full sm:w-auto bg-brand-blue text-white px-10 py-4 rounded-2xl font-bold text-sm shadow-glow flex items-center justify-center space-x-2">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy pt-24 pb-12 px-6 lg:px-12 text-white/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-20">
+                <div class="mb-12 md:mb-0">
+                    <a href="#" class="flex items-center space-x-6 mb-8">
+                        <div class="bg-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
+                            <img src="img/logo.png" class="h-6 w-6" alt="Logo" />
+                        </div>
+                        <span class="text-white font-extrabold text-lg tracking-tight">Info Data</span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-sm">
+                        The definitive source for identity and enterprise verification in China and Southeast Asia.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-12">
+                    <div class="flex flex-col space-y-4">
+                        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Connect</h4>
+                        <a href="contact.html" class="text-sm hover:text-brand-blue transition-colors">Contact Us</a>
+                        <a href="demo.html" class="text-sm hover:text-brand-blue transition-colors">Book a Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-widest">
+                <p>&copy; 2026 Info Data. All rights reserved.</p>
+                <div class="flex space-x-8 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
