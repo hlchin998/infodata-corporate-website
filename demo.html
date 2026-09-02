@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.FontAwesomeConfig = {
+          autoReplaceSvg: 'nest'
+        };
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#06162E',
+                            blue: '#007BFF',
+                            slate: '#64748B',
+                            light: '#F8FAFC',
+                            border: '#E2E8F0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px -12px rgba(0, 0, 0, 0.08)',
+                        'glow': '0 0 20px rgba(0, 123, 255, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #1E293B; }
+        .mesh-gradient {
+            background-color: #F8FAFC;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(0, 123, 255, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(6, 22, 46, 0.03) 0px, transparent 50%);
+        }
+        .btn-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .input-field { transition: all 0.2s ease; }
+        .input-field:focus { border-color: #007BFF; box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1); }
+        .time-slot { transition: all 0.2s ease; }
+        .time-slot:hover { border-color: #007BFF; background-color: rgba(0, 123, 255, 0.05); }
+        .time-slot.selected { background-color: #007BFF; border-color: #007BFF; color: white; }
+    </style>
+</head>
+<body class="mesh-gradient overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-white/70 backdrop-blur-xl border-b border-brand-border">
+        <div class="flex items-center space-x-10">
+            <a href="index.html" class="flex items-center space-x-6">
+                <div class="bg-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
+                    <img src="img/logo.png" class="h-6 w-6" alt="Logo" />
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-brand-navy font-bold text-l leading-none">Info Data</span>
+                </div>
+            </a>
+        </div>
+        <div class="flex items-center space-x-6">
+            <a href="https://id.infodata.my" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Customer Login</a>
+            <a href="contact.html" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Contact Us</a>
+            <a href="demo.html">
+            <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow">
+                Book a Demo
+            </button></a>
+        </div>
+    </nav>
+
+    <!-- Hero / Page Header -->
+    <header id="page-header" class="relative pt-44 pb-16 px-6 lg:px-12 overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-[0.04] pointer-events-none">
+            <div class="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] border border-brand-navy rounded-full"></div>
+            <div class="absolute top-[10%] right-[-5%] w-[700px] h-[700px] border border-brand-navy rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-brand-blue/10 border border-brand-blue/10 px-4 py-1.5 rounded-full mb-8">
+                <span class="w-2 h-2 bg-brand-blue rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-bold text-brand-blue uppercase tracking-widest">See Democonnect in action</span>
+            </div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-brand-navy leading-[1.1] mb-6">
+                Book Your <span class="text-brand-blue">Personalized Demo</span>
+            </h1>
+            <p class="text-lg text-brand-slate max-w-2xl mx-auto leading-relaxed">
+                Tell us a bit about your business and pick a time that works for you. Our solutions team will walk you through the platform tailored to your verification needs.
+            </p>
+        </div>
+    </header>
+
+    <!-- Demo Booking Content -->
+    <section id="demo-booking-content" class="pb-24 px-6 lg:px-12">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Demo Booking Form -->
+            <div id="demo-form-wrapper">
+                <div class="bg-white rounded-[2rem] p-10 lg:p-12 shadow-premium border border-brand-border h-full">
+                        <h3 class="text-2xl font-extrabold text-brand-navy mb-2">Schedule Your Demo</h3>
+                        <p class="text-brand-slate text-sm mb-8">Fill in your details and select a preferred slot. We'll confirm by email within a few hours.</p>
+
+                        <form id="demo-form" class="space-y-6">
+
+                            <!-- Company Information -->
+                            <div>
+                                <h4 class="text-xs font-extrabold text-brand-blue uppercase tracking-widest mb-4 flex items-center space-x-2">
+                                    <i class="fa-solid fa-building"></i>
+                                    <span>Company Information</span>
+                                </h4>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Full Name</label>
+                                        <input type="text" placeholder="John Doe" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Work Email</label>
+                                        <input type="email" placeholder="john@company.com" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                    </div>
+                                </div>
+                                <div class="grid sm:grid-cols-2 gap-6 mt-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Company Name</label>
+                                        <input type="text" placeholder="Your Company Pte Ltd" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Job Title</label>
+                                        <input type="text" placeholder="Head of Compliance" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                    </div>
+                                </div>
+                                <div class="grid sm:grid-cols-2 gap-6 mt-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Company Size</label>
+                                        <select class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                            <option>1 – 10 employees</option>
+                                            <option>11 – 50 employees</option>
+                                            <option>51 – 200 employees</option>
+                                            <option>201 – 1000 employees</option>
+                                            <option>1000+ employees</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Country</label>
+                                        <input type="text" placeholder="Country" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Qualification -->
+                            <div class="pt-2 border-t border-brand-border">
+                                <h4 class="text-xs font-extrabold text-brand-blue uppercase tracking-widest mb-4 mt-6 flex items-center space-x-2">
+                                    <i class="fa-solid fa-clipboard-check"></i>
+                                    <span>Tell Us About Your Needs</span>
+                                </h4>
+                                <div>
+                                    <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Primary Use Case</label>
+                                    <select class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                        <option>Identity Verification (KYC)</option>
+                                        <option>Enterprise Due Diligence (KYB)</option>
+                                        <option>Credit Reference Check</option>
+                                        <option>Fraud Prevention</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="mt-6">
+                                    <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Monthly Verification Volume</label>
+                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                        <button type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">&lt; 500</button>
+                                        <button type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">500 – 5K</button>
+                                        <button type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">5K – 50K</button>
+                                        <button type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">50K+</button>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Anything specific you'd like us to cover? <span class="text-brand-slate font-medium normal-case">(optional)</span></label>
+                                    <textarea rows="3" placeholder="e.g. API integration, regional coverage in Vietnam, pricing tiers..." class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm resize-none"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Date & Time -->
+                            <div class="pt-2 border-t border-brand-border">
+                                <h4 class="text-xs font-extrabold text-brand-blue uppercase tracking-widest mb-4 mt-6 flex items-center space-x-2">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>Preferred Date & Time</span>
+                                </h4>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Preferred Date</label>
+                                        <div class="relative">
+                                            <input type="date" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Timezone</label>
+                                        <select class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                            <option>Malaysia (GMT+8)</option>
+                                            <option>Eastern Daylight Time (GMT-4)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-6">
+                                    <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-3">Preferred Time Slot</label>
+                                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">9:00 AM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">10:30 AM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">12:00 PM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">1:30 PM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">3:00 PM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">4:30 PM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">5:30 PM</button>
+                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">6:30 PM</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 pt-2">
+                                <input type="checkbox" id="consent-demo" class="w-4 h-4 rounded border-brand-border text-brand-blue focus:ring-brand-blue">
+                                <label for="consent-demo" class="text-xs text-brand-slate">I agree to the <a href="#" class="text-brand-blue font-bold hover:underline">Privacy Policy</a> and consent to being contacted by the sales team.</label>
+                            </div>
+
+                            <button type="submit" class="btn-hover w-full bg-brand-blue text-white px-10 py-4 rounded-2xl font-bold text-sm shadow-glow flex items-center justify-center space-x-2">
+                                <span>Request My Demo</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <p class="text-center text-[11px] text-brand-slate">A member of our sales team will follow up to confirm your session within 1 business day.</p>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy pt-24 pb-12 px-6 lg:px-12 text-white/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-20">
+                <div class="mb-12 md:mb-0">
+                    <a href="index.html" class="flex items-center space-x-6 mb-8">
+                        <div class="bg-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
+                            <img src="img/logo.png" class="h-6 w-6" alt="Logo" />
+                        </div>
+                        <span class="text-white font-extrabold text-lg tracking-tight">Info Data</span>
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-sm">
+                        The definitive source for identity and enterprise verification in China and Southeast Asia.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-12">
+                    <div class="flex flex-col space-y-4">
+                        <h4 class="text-white font-bold uppercase tracking-widest text-xs">Connect</h4>
+                        <a href="contact.html" class="text-sm hover:text-brand-blue transition-colors">Contact Us</a>
+                        <a href="demo.html" class="text-sm hover:text-brand-blue transition-colors">Book a Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-xs font-bold uppercase tracking-widest">
+                <p>&copy; 2026 Info Data. All rights reserved.</p>
+                <div class="flex space-x-8 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.volume-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.volume-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        });
+        document.querySelectorAll('.time-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        });
+    </script>
+
+</body>
+</html>
