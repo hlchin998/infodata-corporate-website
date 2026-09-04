@@ -153,7 +153,8 @@
                         <h3 class="text-2xl font-extrabold text-brand-navy mb-2">Send a General Inquiry</h3>
                         <p class="text-brand-slate text-sm mb-8">Fill out the form below and our team will get back to you within 1-2 business days.</p>
 
-                        <form id="inquiry-form" class="space-y-6">
+                        <form id="inquiry-form" class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="4d13fe4d-5575-4338-9b79-9eb9da99303a">
                             <div class="grid sm:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Full Name</label>
