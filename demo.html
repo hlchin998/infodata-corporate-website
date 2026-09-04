@@ -174,12 +174,12 @@
                                 </div>
                                 <div class="mt-6">
                                     <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Monthly Verification Volume</label>
-                                    <div required class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                                        <button name="500" type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">&lt; 500</button>
-                                        <button name="500 - 5k" type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">500 – 5K</button>
-                                        <button name="5k - 50k" type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">5K – 50K</button>
-                                        <button name="50k+" type="button" class="volume-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">50K+</button>
-                                    </div>
+                                    <select name="monthly volume" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                        <option>500</option>
+                                        <option>500 to 5,000</option>
+                                        <option>5,000 to 50,000</option>
+                                        <option>50,000+</option>
+                                    </select>
                                 </div>
                                 <div class="mt-6">
                                     <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Anything specific you'd like us to cover? <span class="text-brand-slate font-medium normal-case">(optional)</span></label>
@@ -204,22 +204,17 @@
                                         <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Timezone</label>
                                         <select name="timezone" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
                                             <option>Malaysia (GMT+8)</option>
-                                            <option>Eastern Daylight Time (GMT-4)</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="mt-6">
                                     <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-3">Preferred Time Slot</label>
-                                    <div required data-name="preferred time" class="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">9:00 AM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">10:30 AM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">12:00 PM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">1:30 PM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">3:00 PM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">4:30 PM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">5:30 PM</button>
-                                        <button type="button" class="time-btn time-slot border border-brand-border rounded-xl py-2.5 text-xs font-bold text-brand-slate">6:30 PM</button>
-                                    </div>
+                                    <select name="preferred time" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                        <option>8:00 AM</option>
+                                        <option>9:00 AM</option>
+                                        <option>10:00 AM</option>
+                                        <option>11:00 AM</option>
+                                    </select>
                                 </div>
                             </div>
 
