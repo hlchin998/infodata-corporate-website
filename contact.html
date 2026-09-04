@@ -158,22 +158,22 @@
                             <div class="grid sm:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Full Name</label>
-                                    <input name="name" type="text" placeholder="John Doe" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                    <input required name="name" type="text" placeholder="John Doe" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Email Address</label>
-                                    <input name="email" type="email" placeholder="john@company.com" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                    <input required name="email" type="email" placeholder="john@company.com" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
                                 </div>
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Company Name</label>
-                                <input name="company name" type="text" placeholder="Your Company Pte Ltd" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
+                                <input required name="company name" type="text" placeholder="Your Company Pte Ltd" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Subject</label>
-                                <select name="subject" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
+                                <select required name="subject" class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm text-brand-slate">
                                     <option>General Question</option>
                                     <option>Product Inquiry</option>
                                     <option>Partnership Opportunity</option>
@@ -183,7 +183,7 @@
 
                             <div>
                                 <label class="block text-xs font-bold text-brand-navy uppercase tracking-widest mb-2">Message</label>
-                                <textarea name="message" rows="5" placeholder="Tell us how we can help..." class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm resize-none"></textarea>
+                                <textarea required name="message" rows="5" placeholder="Tell us how we can help..." class="input-field w-full px-4 py-3.5 rounded-xl border border-brand-border bg-brand-light focus:outline-none focus:bg-white text-sm resize-none"></textarea>
                             </div>
 
                             <div class="flex items-center space-x-3">
