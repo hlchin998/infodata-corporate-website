@@ -36,27 +36,35 @@
                 }
             }
         }
-
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('icon-open');
-        const iconClose = document.getElementById('icon-close');
+    </script>
     
-        menuBtn.addEventListener('click', () => {
-            const isOpen = !menu.classList.contains('hidden');
-            menu.classList.toggle('hidden');
-            iconOpen.classList.toggle('hidden');
-            iconClose.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', String(!isOpen));
-        });
-    
-        // close menu when a link inside it is clicked
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                iconOpen.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+        
+            if (!menuBtn || !menu) {
+                console.error('Mobile menu: elements not found', { menuBtn, menu });
+                return;
+            }
+        
+            menuBtn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                iconOpen?.classList.toggle('hidden');
+                iconClose?.classList.toggle('hidden');
+                menuBtn.setAttribute('aria-expanded', String(!isOpen));
+            });
+        
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    iconOpen?.classList.remove('hidden');
+                    iconClose?.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
             });
         });
     </script>
