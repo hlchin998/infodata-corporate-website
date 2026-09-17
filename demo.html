@@ -37,6 +37,38 @@
             }
         }
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+        
+            if (!menuBtn || !menu) {
+                console.error('Mobile menu: elements not found', { menuBtn, menu });
+                return;
+            }
+        
+            menuBtn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                iconOpen?.classList.toggle('hidden');
+                iconClose?.classList.toggle('hidden');
+                menuBtn.setAttribute('aria-expanded', String(!isOpen));
+            });
+        
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    iconOpen?.classList.remove('hidden');
+                    iconClose?.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+    
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #1E293B; }
         .mesh-gradient {
@@ -59,7 +91,7 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-white/70 backdrop-blur-xl border-b border-brand-border">
         <div class="flex items-center space-x-10">
-            <a href="index.html" class="flex items-center space-x-6">
+            <a href="index.html" class="flex items-center space-x-4 md:space-x-6">
                 <div class="bg-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
                     <img src="img/logo.png" class="h-6 w-6" alt="Logo" />
                 </div>
@@ -68,33 +100,76 @@
                 </div>
             </a>
         </div>
-        <div class="flex items-center space-x-6">
+    
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center space-x-6">
             <a href="https://id.infodata.my" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Customer Login</a>
             <a href="contact.html" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Contact Us</a>
             <a href="demo.html">
-            <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow">
-                Book a Demo
-            </button></a>
+                <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow">
+                    Book a Demo
+                </button>
+            </a>
+        </div>
+    
+        <!-- Mobile hamburger button -->
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-brand-navy" aria-label="Toggle menu" aria-expanded="false">
+            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-brand-border px-6 py-6 flex flex-col space-y-5">
+            <a href="https://id.infodata.my" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Customer Login</a>
+            <a href="contact.html" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Contact Us</a>
+            <a href="demo.html" class="w-full">
+                <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow w-full">
+                    Book a Demo
+                </button>
+            </a>
         </div>
     </nav>
 
     <!-- Hero / Page Header -->
-    <header id="page-header" class="relative pt-44 pb-16 px-6 lg:px-12 overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full opacity-[0.04] pointer-events-none">
-            <div class="absolute top-[-10%] right-[-10%] w-[700px] h-[700px] border border-brand-navy rounded-full"></div>
-            <div class="absolute top-[10%] right-[-5%] w-[700px] h-[700px] border border-brand-navy rounded-full"></div>
+    <header id="hero" class="relative min-h-[600px] md:h-[820px] flex items-center overflow-hidden pt-28 pb-16 md:pt-0 md:pb-0">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/gen_9be4870049_f24a3bee05a59471.png" alt="dark cinematic aerial view of a Southeast Asian megacity skyline at night, glowing skyscrapers, mood" />
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-brand-navy/30"></div>
         </div>
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
-            <div class="inline-flex items-center space-x-2 bg-brand-blue/10 border border-brand-blue/10 px-4 py-1.5 rounded-full mb-8">
-                <span class="w-2 h-2 bg-brand-blue rounded-full animate-pulse"></span>
-                <span class="text-[10px] font-bold text-brand-blue uppercase tracking-widest">See Democonnect in action</span>
+    
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-full mb-6 md:mb-8">
+                    <span class="w-2 h-2 bg-brand-blue rounded-full animate-pulse"></span>
+                    <span class="text-[10px] font-bold text-white uppercase tracking-widest">China & SE Asia Expert</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.15] lg:leading-[1.1] mb-6 md:mb-8">
+                    Precision Identity <br><span class="text-brand-blue">Intelligence</span>
+                </h1>
+                <p class="text-base md:text-lg text-white/70 max-w-xl leading-relaxed mb-8 md:mb-12">
+                    High-fidelity verification protocols for the East Asian market. We bridge the data gap with real-time individual checks and deep-dive enterprise due diligence.
+                </p>
+    
+                <div class="flex flex-wrap gap-6 md:gap-10 pt-6 md:pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-xl md:text-2xl font-bold text-white">Real-time</div>
+                        <div class="text-xs text-white/50 font-medium uppercase tracking-wider mt-1">Data Synchronization</div>
+                    </div>
+                    <div>
+                        <div class="text-xl md:text-2xl font-bold text-white">Dual Layer</div>
+                        <div class="text-xs text-white/50 font-medium uppercase tracking-wider mt-1">Individual & Enterprise</div>
+                    </div>
+                    <div>
+                        <div class="text-xl md:text-2xl font-bold text-white">Regional</div>
+                        <div class="text-xs text-white/50 font-medium uppercase tracking-wider mt-1">China & SE Asia Coverage</div>
+                    </div>
+                </div>
             </div>
-            <h1 class="text-4xl lg:text-6xl font-extrabold text-brand-navy leading-[1.1] mb-6">
-                Book Your <span class="text-brand-blue">Personalized Demo</span>
-            </h1>
-            <p class="text-lg text-brand-slate max-w-2xl mx-auto leading-relaxed">
-                Tell us a bit about your business and pick a time that works for you. Our solutions team will walk you through the platform tailored to your verification needs.
-            </p>
         </div>
     </header>
 
