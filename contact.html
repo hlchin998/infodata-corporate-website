@@ -37,6 +37,38 @@
             }
         }
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+        
+            if (!menuBtn || !menu) {
+                console.error('Mobile menu: elements not found', { menuBtn, menu });
+                return;
+            }
+        
+            menuBtn.addEventListener('click', () => {
+                const isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                iconOpen?.classList.toggle('hidden');
+                iconClose?.classList.toggle('hidden');
+                menuBtn.setAttribute('aria-expanded', String(!isOpen));
+            });
+        
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    iconOpen?.classList.remove('hidden');
+                    iconClose?.classList.add('hidden');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+    
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #1E293B; }
         .mesh-gradient {
@@ -56,7 +88,7 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-white/70 backdrop-blur-xl border-b border-brand-border">
         <div class="flex items-center space-x-10">
-            <a href="index.html" class="flex items-center space-x-6">
+            <a href="index.html" class="flex items-center space-x-4 md:space-x-6">
                 <div class="bg-white p-2.5 rounded-xl flex items-center justify-center shadow-md">
                     <img src="img/logo.png" class="h-6 w-6" alt="Logo" />
                 </div>
@@ -65,13 +97,37 @@
                 </div>
             </a>
         </div>
-        <div class="flex items-center space-x-6">
+    
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center space-x-6">
             <a href="https://id.infodata.my" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Customer Login</a>
             <a href="contact.html" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Contact Us</a>
             <a href="demo.html">
-            <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow">
-                Book a Demo
-            </button></a>
+                <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow">
+                    Book a Demo
+                </button>
+            </a>
+        </div>
+    
+        <!-- Mobile hamburger button -->
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 text-brand-navy" aria-label="Toggle menu" aria-expanded="false">
+            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-brand-border px-6 py-6 flex flex-col space-y-5">
+            <a href="https://id.infodata.my" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Customer Login</a>
+            <a href="contact.html" class="text-sm font-bold text-brand-navy hover:text-brand-blue transition-colors">Contact Us</a>
+            <a href="demo.html" class="w-full">
+                <button class="btn-hover bg-brand-blue text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-glow w-full">
+                    Book a Demo
+                </button>
+            </a>
         </div>
     </nav>
 
