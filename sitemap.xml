@@ -29,6 +29,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://infodata.my/partner.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://infodata.my/privacy.html</loc>
     <lastmod>2026-10-01</lastmod>
     <priority>0.3</priority>
